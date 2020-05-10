@@ -46,11 +46,11 @@ hybrid cloud:
 * highest flexibility
 
 ## Types of Cloud Services
-* IaaS
-* PaaS
-* SaaS
+* IaaS: Infrastructure as a Service
+* PaaS: Platform as a Service
+* SaaS: Software as a Service
 
-### Infrastructure as a Service (IaaS)
+### IaaS
 need to manage updates of the following:
 * Server
 * VMs
@@ -58,12 +58,12 @@ need to manage updates of the following:
 * Operating System
 * networks
 
-### Platform as a Service
+### PaaS
 need to manage the following:
 * application
 Amount of CPUs etc. does not need to be managed
 
-### Software as a Service
+### SaaS
 software ready to use hosted in the cloud.
 Example: Office 365.
 Need to manage:

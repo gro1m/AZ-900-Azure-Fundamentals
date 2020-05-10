@@ -86,3 +86,22 @@ region pairs:
 geographies:
 * discrete markets
 * have same data residency and same compliance boundaries
+
+resource groups:
+* container for multiple ressources that have the same lifecycle
+* no hierarchical structures
+* aggregates ressources in a manageable unit.
+
+Above Management group there is the tenants directory (tenant = own company)
+
+Azure Resource Manager:
+* manages access to Azure
+* Management Groups: 
+- groups of subscriptions
+- rules for multiple subscriptions (for example only Swiss datacenters allowed)
+* subscription:
+- here billing information is stored
+* resource groups:
+- belong to exactly one subscription
+* resource:
+- has to be in a resource group

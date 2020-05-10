@@ -97,11 +97,11 @@ Above Management group there is the tenants directory (tenant = own company)
 Azure Resource Manager:
 * manages access to Azure
 * Management Groups: 
-- groups of subscriptions
-- rules for multiple subscriptions (for example only Swiss datacenters allowed)
+  - groups of subscriptions
+  - rules for multiple subscriptions (for example only Swiss datacenters allowed)
 * subscription:
-- here billing information is stored
+  - here billing information is stored
 * resource groups:
-- belong to exactly one subscription
+  - belong to exactly one subscription
 * resource:
-- has to be in a resource group
+  - has to be in a resource group

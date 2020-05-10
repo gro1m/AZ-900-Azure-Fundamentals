@@ -57,6 +57,7 @@ need to manage updates of the following:
 * Storage
 * Operating System
 * networks
+Example: Virtual Machine.
 
 ### PaaS
 need to manage the following:
@@ -105,3 +106,10 @@ Azure Resource Manager:
   - belong to exactly one subscription
 * resource:
   - has to be in a resource group
+
+## Core Azure service and products
+1) Azure Compute services 
+* IaaS
+* disks, processors, storage, network, operating system
+2) VM scale set
+* automatic scaling of identical VMs (e.g. Black Friday)

@@ -29,3 +29,22 @@ capital expenditure (capex):
 
 operational expenditure (opex):
 * consumption-based model: only pay for effectively needed services; you need to pay immediately!
+* example: Black Friday
+
+public cloud:
+* secure network-connection
+* no capex
+* pay-what-you-use
+* fast
+
+private cloud:
+* own datacenter
+* own ressource
+
+hybrid cloud:
+* public + private cloud
+* highest flexibility
+
+
+
+

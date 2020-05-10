@@ -71,3 +71,18 @@ Need to manage:
 Example: Word Online , where to store data and who has access
 
 ## Core Concepts
+region:
+* collection of data centers
+* a ressource has to mapped onto a region
+
+NOTE: For AI Services not all regions may be available!
+
+There are 50+ regions in 140 countries.
+
+region pairs:
+* same services, same legal jurisdiction
+* Microsoft tries to separate them at least 300 miles apart, i.e. if catastrophe hits one region, you could transfer it to the region pair
+
+geographies:
+* discrete markets
+* have same data residency and same compliance boundaries

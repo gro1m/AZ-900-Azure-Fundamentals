@@ -268,7 +268,113 @@ etc.
 5. B2C
 6. device management
 
+* Azure Multi-Factor Authentication:
+3 factors: 
+  * something you know (password)
+  * something you possess (key, mobile authenticator app)
+  * something you are (fingerprint)
+ 
+### Security Tools and features
+* Azure Security Center
+* Azure Key Vault
+  * password and certificates securely stored
+  * backed by hardware security modules (MSMs)
+  * cannot be moved
+* AIP: Azure Information Protection
+* ATP: Azure Advanced Threat
 
+### Governance
+* Azure Policy -> SLAs:
+  * policy initiations -> definitions
+  * can be assignedon level *Management Group*, *Subscription*, *Ressource*
+* Role-based access control (RBAC):
+  * on resource group
+  * deny assignments always stronger than role assignments
+* Resource locks
+  * protect your Azure resources from accidental deletion or modification
+* Azure Blueprints
+  * via subscription
+  * audits, deployments etc
+  * subscription governance: billing, access control, limits -> can be hard
+* Tags
+  * Metadata for Azure ressources (name-value pair)
+* Azure Monitor
+  * metrics
+  * activity log
+* Azure Service Health
+  * status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
+* Privacy statement
+  * defines how data is protected
+* Trust Center
+* Service Trust Portal (STP)
+* Compliance Manager
+  * compares ressources against own policies
+* Azure Government services meets needs from US agencies
+* Azure Government physically isolated from non-governmental US deployments
+* Azure China 21Vianet: physically separated instance and managed by 21Vianet
+
+## Pricing/Support Plan
+subscription offers:
+ * free
+ * pay-as-you-go
+ * enterprise agreement
+ * student/teacher
+ * account can have more than one subscription
+Azure free account:
+ * 12 months + 200$ credit for first 30 days 
+web-direct
+cloud solution providers
+ressource type: resource-specific costs
+services: depends on subscription
+location: most expensive -> Brazil, cheapest -> West US 1,2
+bandwidth: data transfer
+
+pricing calculator
+total cost of ownership calculator
+
+azure reservations: reserve ressources in advance -> pay less
+tags: lets you mark cost owner
+
+Azure Cost Management:
+  * reporting
+  * data environment
+  * Budgets
+  * Alerting
+  * Recommendations
+  
+Cost Management and Billing:
+  * Cost analysis by location, tag, resource group
+  
+Support plan
+  * Basic (always, default)
+  * Developer (24-hr-answer from support)
+  * Standard (instant answer)
+  * Professional Direct
+  * Premier: support engineers + technical account manager + implementation support
+  
+Support channels:
+  * MSDN: Microsoft Developer Network
+  * Stack Overflow
+  * Server Fault
+  * Microsoft Azure General Feedback
+  * @AzureSupport
+  * Knowledge Center
+  
+  
+SLA          | Downtime (Month) | Downtime (Year)
+------------ | -------------    | ---------------
+99.9%        | 43.2 mins        |  8.76 h
+99.95%       | 21.6 mins        |  4.38 h
+99.99%       |  4.32 mins       | 52.56 mins
+
+composite SLA is obtained by multiplying individual SLAs.
+
+private preview: 
+  * Azure feature available to certain Azure customers for evaluation purposes
+public preview:
+
+preview.portal.azure.com
+  
   
 
 

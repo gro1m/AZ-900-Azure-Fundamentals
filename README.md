@@ -181,10 +181,96 @@ Access tier:
 * archive: storage very cheap, access very expensive (stored on magnetic tape)
 
 ## Azure database services
-Azure Cosmos DB:
-* extremely performant, extremely expensive
-Azure SQL DB:
-* last Version of Microsoft SQL DB.
+* Azure Cosmos DB:
+  * extremely performant, extremely expensive
+* Azure SQL DB:
+  * last Version of Microsoft SQL DB.
+* Azure DataBase Migration
+* Azure Marketplace
+  * Microsoft products
+
+## Azure solutions
+### Internet of Things (IoT)
+* data collecting devices send their data to Azure IoT Hub
+* Azure IoT Hub manages the data of the IoT devices
+* Azure IoT Central is a SaaS solution for IoT devices that is based on Azure IoT Hub techniques
+* IoT Hub name has to be globally unique
+### Big data and analytics
+Azure Synaptic Analytics:
+  * Data Warehousing and Big Data (Analysis)
+Azure HD Insight:
+  * cost-efficient, simplified processing of data
+Azure Data Lake Analytics:
+  * simplification of data in the data lake
+### Artificial Intelligence
+Azure Machine Learning Service:
+* cloud-based environment tool
+Azure Machine Learning Studio:
+* SaaS offering from Azure Machine Learning Service
+Cognitive Services:
+* LUIS (language understanding intelligent service)
+### Serverless computing
+* only pay at runtime
+* Azure Functions: 
+  * pay per executing Code Snippets
+  * select a trigger
+* Azure Log Functions
+  * automatically orcherstrated tasks
+* Azure Event Grid
+### DevOps
+* Azure DevOps:
+  * pipelines, Git repositories, Kanban boards, extensive automated cloud-based load-testing
+* Azure DevTest Labs:
+  * test environment => cost of an environment
+### Azure App Service 
+* PaaS (create WebApp)
+* multiple languages, frameworks
+* DevOps optimization
+* global scalability with high availability
+* security
+* VisualStudio Integration
+etc.
+### Azure management tools
+* az cli
+### Azure Advisor
+* Security
+## Security, privacy, compliance and trust
+* physical security
+  * datacenter (hardware) <- prevent that someone can enter with a USB stick
+* identity and access
+  * identification, authentication and authorization
+* perimeter layer
+  * firewall
+* network
+  * traffic
+* compute
+  * VM protection
+* application
+  * prevent SQL injection etc.
+* data
+### Perimeter Layer
+#### Azure Firewall
+* FaaS: Firewall as a SErvice - inbound/outbound protection
+#### Azure DDoS
+* Distributed Denial of Service - bombardment of the service with requests
+### Network Layer
+* Network Security Group (NSGs) 
+  * "internetcable with some features"
+  * inbound/outbound rules
+## Core Azure identity services
+### Azure Active Directory (AD)
+* authentication: identifies person
+* authorization: determines access levels
+1. SSO: Single-Sign-On (device is deposited)
+2. application management: give access to applications
+3. authentication
+4. B2B
+5. B2C
+6. device management
+
+
+  
+
 
 
 

@@ -63,6 +63,7 @@ Example: Virtual Machine.
 need to manage the following:
 * application
 Amount of CPUs etc. does not need to be managed
+Example: Azure Container services
 
 ### SaaS
 software ready to use hosted in the cloud.
@@ -113,3 +114,77 @@ Azure Resource Manager:
 * disks, processors, storage, network, operating system
 2) VM scale set
 * automatic scaling of identical VMs (e.g. Black Friday)
+3) App services
+* PaaS
+* Applikation (e.g. no load balancing)
+4) Functions
+* code in cloud that only costs when in use
+* compute actions based on an event
+
+## Availability Options for VMs
+* single VM: 99.9%
+* availability set: 99.95%
+  * multiple copies of a VM in the same region
+  * fault domain (FD): select cpu family, cluster that supports cpu family
+  * update domain (UD): inside cluster single server/rack
+  * e.g. 5 UD and 3 FD: VM is on 3 clusters on 5 servers
+* availability zone: 99.99%
+  * physically separated zones inside a region that means: separate electricity, cooling and network, e.g. network: Swisscom, Sunrise
+* region pairs: multi-region disaster recovery
+
+## Container services
+a container is a minimal version of a VM, a VM image is typically quite big.
+Azure Container services -> PaaS offering to upload.
+Azure Kubernetes services -> administer big amount of containers (orchestrator)
+
+## Azure network services ("Router to which you attach VMs")
+* Azure Virtual Network
+* Azure Load Balancer
+* VPN Gateway
+* Azure Application Gateway - on DNS level
+* Content Delivery Network 
+  * goes through Azure Backbone (WAN-Link via undersea network cables that belong to Microsoft)
+  * Example: Web application from Europe puts in onto a US edge device (marked as small rectangles). After 30 or 90 days fetch from original place. white routes means there is an availability zone (threee separate zones with independent electricity, cooling and network infrastructure)
+* Brazil is not a paired region, i.e. is not used as backup.
+
+structured data -> SQL-databases (tables), relational databases
+semi-structured data -> NoSQL-databases (JSON, BLOBs, books, blogs, HTML)
+unstructured data
+
+## Azure storage services
+IaaS:
+* VM -> disk is created and stored in storage account
+* network storage -> file share
+* disks / files
+PaaS:
+* Containers: 
+  * Block Blobs (small images) 
+  * Page Blobs (data is loaded step-by-step)
+  * append blobs (e.g. log files)
+* Tables:
+  * key-value lookup (NoSQL solutions, scale in the peta-domain of data)
+* Queues (Message Queues), e.g. jobs might use a VM sequentially so that there is not a problem with dealing a huge amount of requests.
+
+Performance: no standard disks
+Account kind: Storage Version 2 , Version 1 only Containers available
+
+Replication: 
+e.g. West Europe.
+* locally-redundant storage: -> 3 copies
+* zone-redundant storage: separate electricity, cooling and network
+* geo-redundant storage: six copies in West-Europe and North-Europe (region pairs)
+* read-access geo-redundant storage: second endpoint has read access
+
+Access tier:
+* hot: for a lot of data accesses: storage expensive, access cheap
+* cool: for small data access: storage cheap, access expensive
+* archive: storage very cheap, access very expensive (stored on magnetic tape)
+
+## Azure database services
+Azure Cosmos DB:
+* extremely performant, extremely expensive
+Azure SQL DB:
+* last Version of Microsoft SQL DB.
+
+
+

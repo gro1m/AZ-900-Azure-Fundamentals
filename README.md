@@ -371,6 +371,7 @@ composite SLA is obtained by multiplying individual SLAs.
 
 private preview: 
   * Azure feature available to certain Azure customers for evaluation purposes
+
 public preview:
 
 preview.portal.azure.com

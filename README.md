@@ -3,7 +3,7 @@ Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
 * Understand cloud concepts (15-20%)
 * Understand core Azure services (30-35%)
 * Understand security, privacy, compliance and trust
-* Azure pricing and support
+* Understand Azure pricing and support
 
 ## Motivation for Cloud
 renting ressources.
@@ -19,9 +19,9 @@ cloud providers:
 * Google
 
 Main terms:
-* availability
+* availability (Azure Load Balancer, Traffic Manager)
 * fault tolerance
-* scalability -> 1 VM to 100 VMs in some seconds
+* scalability -> 1 VM to 100 VMs in some seconds (Virtual Machine scale sets)
 * elasticity -> amount of VMs by demand
 * global reach -> services near to place of use
 * predictive cost considerations
@@ -36,17 +36,23 @@ operational expenditure (opex):
 * consumption-based model: only pay for effectively needed services; you need to pay immediately!
 * example: Black Friday
 
+### different cloud models
 public cloud:
+* example: Microsoft Azure
+* physical infrastructure managed by cloud provider, e.g. Microsoft.
 * secure network-connection
 * no capex
 * pay-what-you-use
 * fast
 
 private cloud:
+* physical infrastracture is managed by your company.
+* motivation: own infrastructure and data.
 * own datacenter
 * own ressource
 
 hybrid cloud:
+* connect cloud solution with on-premise infrastructure.
 * public + private cloud
 * highest flexibility
 
@@ -56,19 +62,20 @@ hybrid cloud:
 * SaaS: Software as a Service
 
 ### IaaS
+Example: Virtual Machine (stored on physical server hosted in a cloud provider's datacenter)
 need to manage updates of the following:
 * Server
 * VMs
 * Storage
 * Operating System
 * networks
-Example: Virtual Machine.
 
 ### PaaS
+Example: Azure Container services, Database management system e.g. Azure SQL Database
 need to manage the following:
 * application
 Amount of CPUs etc. does not need to be managed
-Example: Azure Container services
+
 
 ### SaaS
 software ready to use hosted in the cloud.

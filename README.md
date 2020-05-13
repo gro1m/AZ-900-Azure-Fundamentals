@@ -1,4 +1,9 @@
 # AZ-900-Azure-Fundamentals
+Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
+* Understand cloud concepts (15-20%)
+* Understand core Azure services (30-35%)
+* Understand security, privacy, compliance and trust
+* Azure pricing and support
 
 ## Motivation for Cloud
 renting ressources.

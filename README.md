@@ -5,6 +5,74 @@ Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
 * Understand security, privacy, compliance and trust
 * Understand Azure pricing and support
 
+## general exam remarks
+- PowerShell and Azure CLI support is not for Android OS
+- PowerShell can be run on Linux only when PowerShell Core and Azure CLI is installed.
+- PowerShell can be installed on MacOS: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
+- If you are looking at storing data that is not frequently used use Azure Data Lake. Also needed for PowerBI.
+Azure SQL, Azure PostgreSQL or Cosmos DB for frequently accessed data.
+
+* https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-vs-authorization
+- Authentication is the process of proving you are who you say you are. Authentication is sometimes shortened to AuthN. Microsoft identity platform implements the OpenID Connect protocol for handling authentication.
+
+- Authorization is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to AuthZ. Microsoft identity platform implements the OAuth 2.0 protocol for handling authorization.
+
+- Virtual Machine Scale Sets: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
+
+- Azure Privileged Identity Management: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
+
+- Azure Application Insights: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
+
+- https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview: You can have resources (e.g. storage) in same resource groups, but different locations.
+
+- https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources: (resource group) tags are not inherited.
+
+- permissions are inherited
+
+- https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations: Azure Security gives security recommendations, not Azure Advisor
+
+- https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview: Azure Resource Manager ideal solution if you have to deploy the same type of resource repeatedly.
+
+- https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings: configure MFA
+
+- https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
+
+- https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources: Azure Locks are used to prevent accidental modification or deletion of resources.
+
+- https://docs.microsoft.com/en-us/azure/governance/policy/overview: Azure Policy
+
+- https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts: Azure Key Vault used for security purposes such as key and secret management.
+
+- support plans: https://azure.microsoft.com/en-us/support/plans/
+
+- Azure Pricing FAQ: https://azure.microsoft.com/en-us/pricing/faq/
+
+- Azure Cost Management + Billing: https://azure.microsoft.com/en-us/pricing/details/cost-management/
+
+- Cloudyn service: https://docs.microsoft.com/en-us/azure/cost-management-billing/cloudyn/overview
+
+- Pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator/
+
+- Azure Resiliency: https://azure.microsoft.com/en-us/features/resiliency/
+
+- https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers?tabs=azure-portal
+
+- Azure Service Bus: https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
+
+- Azure Reservations: https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations
+
+- https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
+
+- Azure Policy: https://docs.microsoft.com/en-us/azure/governance/policy/overview
+
+- Azure Role-Based Access Control: https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
+
+- https://docs.microsoft.com/en-us/azure/governance/management-groups/
+
+- Azure Functions: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
+
+- Azure Logic Apps: https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
+
 ## Motivation for Cloud
 renting ressources.
 ressources are:

@@ -159,7 +159,17 @@ region:
 
 NOTE: For AI Services not all regions may be available!
 
-There are 50+ regions in 140 countries.
+There are 50+ regions in 140 countries:
+https://azure.microsoft.com/en-us/global-infrastructure/regions/
+
+availability zones:
+* Unique physical locations within a region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking.
+
+* Azure Free Account:
+- 12 months of popular free services + $200 credit for 30 days + 25+services which are always free.
+- https://azure.microsoft.com/en-us/free/
+
+* Azure Portal:
 
 region pairs:
 * same services, same legal jurisdiction
@@ -169,8 +179,14 @@ geographies:
 * discrete markets
 * have same data residency and same compliance boundaries
 
+resource:
+* manageable item that can be created in Azure
+* e.g. WebApp, VM, SQL Database ...
+* e.g. VM can be assigned to another resource, the NSG.
+
 resource groups:
-* container for multiple ressources that have the same lifecycle
+* holds related resources
+* container for multiple resources that have the same lifecycle
 * no hierarchical structures
 * aggregates ressources in a manageable unit.
 
@@ -212,6 +228,20 @@ Azure Resource Manager:
   * physically separated zones inside a region that means: separate electricity, cooling and network, e.g. network: Swisscom, Sunrise
 * region pairs: multi-region disaster recovery
 
+## Virtual Machine
+- gets assigned a Network interface (separate resource)
+- network interface gets assigned a private IP address
+- can have multiple disks for storage (this are VHD files)
+- by default gets OS disk, but you can also assign data disks
+- can control traffic flow by Network Security Groups.
+- in summary creates in the same resource group:
+  - Virtual Network
+  - Virtual Machine
+  - Disk
+  - Network interface
+  - Public IP address
+  - Network security group
+
 ## Container services
 a container is a minimal version of a VM, a VM image is typically quite big.
 Azure Container services -> PaaS offering to upload.
@@ -219,6 +249,13 @@ Azure Kubernetes services -> administer big amount of containers (orchestrator)
 
 ## Azure network services ("Router to which you attach VMs")
 * Azure Virtual Network
+  - allows yout define your own network in Azure
+  - can consist of multiple subnets
+  - needs to be assigned an address space, e.g. 10.0.0.0/16.
+  - subnet address space has to be subset of address space of Virtual Network, e.g. 10.0.1.0/24 and 10.0.2.0/24. VMs created in Subnet.
+  - each machine in the subnet will get a private IP address, e.g. 10.0.1.4 and 10.0.2.4
+  - a public address (allows to connect to Internet) can also be assigned to VM e.g. 40.11.112.4 and e.g. 50.1.200.4
+  - Virtual Network Peering between networks so that VMs can communicate across VNets.
 * Azure Load Balancer
 * VPN Gateway
 * Azure Application Gateway - on DNS level

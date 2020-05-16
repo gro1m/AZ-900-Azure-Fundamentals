@@ -392,6 +392,14 @@ etc.
 * scales number of virtual machines based on threshold
 * adds element of high availability to your infrastructure.
 * machines in scale set can be behind Load Balancer or an Application Gateway.
+
+### Azure Load Balancer
+* provides high availability for your applications
+* fully-managed service in Azure
+* allows you to distribute traffic to your backend Virtual machines.
+* ensures equal distribution of requests to VMs.
+* internal load balancer - only balance traffic from within VNet.
+* public load balancer - balance internet traffic to VMs.
   
 ## Core Azure identity services
 ### Azure Active Directory (AD)

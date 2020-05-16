@@ -373,7 +373,26 @@ etc.
 ### Network Layer
 * Network Security Group (NSGs) 
   * "internetcable with some features"
-  * inbound/outbound rules
+  * consists of rules for inbound and outbound traffic
+  * used to control traffic into your subnet or Virtual Machine
+  * traffic within a Virtual Network is automatically allowed
+  * you need to explicitly allow traffic from the Internet
+  * VMs inside same virtual net can connect via the private IP address
+  * can be applied to Network Interface Card or the subnet itself
+  * rule can be either an IP address, a CIDR block, service tag or application security group
+  * you define port numbers for the rule
+  * you define the protocol
+  * you decide whether to allow or deny the action
+
+### Virtual Machine Scale Sets
+* allows you to scale your infrastracture based on demand
+* infrastracture can scale out when demand increased
+* infrastructure can scale in when demand decreases.
+* Scale Sets can also be applied to Azure Web Apps.
+* scales number of virtual machines based on threshold
+* adds element of high availability to your infrastructure.
+* machines in scale set can be behind Load Balancer or an Application Gateway.
+  
 ## Core Azure identity services
 ### Azure Active Directory (AD)
 * authentication: identifies person

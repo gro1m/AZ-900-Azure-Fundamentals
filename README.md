@@ -491,6 +491,55 @@ sudo stress --cpu 100
   - have the function running longer time
   - more memory
 
+### Azure Logic Apps
+* helps to automate and orchestrate tasks
+* helps to build workflows (with various templates) - do not need to worry about the infrastructure
+* fully managed and serverless service
+* workflow can be integrated with Azure services and 3rd party apps
+  * connectors to e.g. BLOB storage, Azure Functions, Azure Service Bus
+* workflows can be built via Visual Designer
+* Some connectors like Blob storage can trigger Azure Logic Apps.
+* Action: what to do when an event is triggered -> email to IT Administrator, Azure Function
+
+### Azure Cosmos DB
+* multi-model database:
+  - you can create CosmosDB account and has support for different APIs (Table, SQL, MongoDB, Cassandra, Gremlin, etc.)
+* low-latency access
+* instant replication of data across regions
+* scales automatically based on demand
+* fully managed and serverless service
+* 99.999% availability for reads and write
+* ability to scal from thousands to hundreds of millions or requests/sec
+* guarantess less than 10 ms latencies for reads and writes at 99% percentile.
+
+### Azure SQL Database
+* PaaS from Microsoft SQL Server
+* 99.99% of availability.
+
+### Azure SQL Data Warehouse
+* Enterprise Data Warehouse on Azure.
+* Used to store petabytes of data.
+* perfect data store when you want end-to-end big data solution on Azure
+* data is stored in relational tables using columnar storage 
+  * reduces storage costs
+  * improves query performance
+* you can perform query analysis over large data sets
+* not for transactional data (use SQL Database).
+
+### Azure Content Delivery Network (CDN)
+* effective delivery of web content to users
+* users around the world get a seemless experience in terms of latency, response.
+* popular content can be cached.
+* edge servers (point of presence): deliver content
+  * contacts origin to get resource if it does not have it and then caches it based on TTL (Time to live).
+* you need to create a CDN profile and then a CDN endpoint.
+* you can attach multiple endpoints to a CDN profile.
+
+### Azure Management Tools
+* Azure Portal
+* PowerShell 
+  * can run on Windows, Mac OS, Linux
+* Azure Command Line Interface
 
   
 ## Core Azure identity services

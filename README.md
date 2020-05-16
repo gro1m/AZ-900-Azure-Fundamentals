@@ -425,6 +425,73 @@ sudo stress --cpu 100
 * fully-managed service
 * you can also add Web Application Firewall to protect web applications against SQL injections, cross-scriptiong attacks etc.
 * example: url-based routing (i.e. request to subpages of website are sent onto different VMs)
+
+### Azure Storage
+* Blob Storage
+  - object storage
+  - store unstructured data e.g. files, videos, images, log files
+  - need to create a Storage Account and inside Containers you store objects
+  - hot storage tier - data accessed frequently
+  - cool tier: infrequently accessed data
+  - archive tier: rarely accessed data (can only be set at object level, not at Container level) - objects cannot be accessed in this tier.
+* File Storage
+  - allows file retrieval via the Server Message Block protocol
+  - can mount file shares on Windows, Linux and Mac based machines
+  - do not need file servers.
+* Table Storage
+  - used for storing structured NoSQL data
+  - key attribute store
+  - cost-effective option for storage of table like user data for applications.
+* Queue storage
+  - used for storage and retrieval of message
+  - when you want to decouple components of an application
+  - a single message in the queue can be up to 64KB in size
+  - can store millions of messages in the queue.
+
+* Account kind (version)
+  - v2 -> access tier option
+  - v1 -> does not have all options
+  - Blob Storage -> only blob storage
+  
+* Change access level:
+  - Blob (anonymous read access for blob only) enables to get it via URL
+  
+### Azure VPN Gateway
+* used to connect your on-premise network to an Azure network in an encrypted manner.
+* Point to Site Connection:
+  - connect workstations to an Azure Virtual Network
+  - you need to install a VPN client
+  - you need to make use of certificates for authenticating clients
+  - typically for limited number of clients
+* Site to Site Connection
+  - used to connect on-premise networks to Azure networks.
+  - traffic encrypted using IPSec protocol
+  - on-premise network needs a VPN device with an IP address that is routable over the Internet.
+  
+### Azure Web App
+- PaaS for hosting web apps using Azure App Service.
+- not responsible for machine setup, web server setup, security updates
+- underlying servers can be Windows or Linux.
+
+### Azure Functions
+- serverless compute service
+- only pay what you use
+- use C#, F#, Node.js, Java or PHP
+- integrates with other Azure services
+- code upload to Azure Functions
+- can have input and output bindings:
+  - input binding: whenever an object is add to BLOB storage, invoke the function
+  - output binding: function can add data to Azure table storage
+- costing: consumption plan or App Service Plan
+- consumption plan: 
+  - charged for the number of execution, execution time, memory used.
+  - maximum allowable execution time is 5 minutes
+- App Service Plan
+  - have instances allocated
+  - have the function running longer time
+  - more memory
+
+
   
 ## Core Azure identity services
 ### Azure Active Directory (AD)

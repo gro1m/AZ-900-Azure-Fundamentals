@@ -392,14 +392,39 @@ etc.
 * scales number of virtual machines based on threshold
 * adds element of high availability to your infrastructure.
 * machines in scale set can be behind Load Balancer or an Application Gateway.
+* Linux tool for stress tests on https://www.tecmint.com/linux-cpu-load-stress-test-with-stress-ng-tool/
+: 
+```bash
+sudo apt get install stress
+sudo stress --cpu 100
+```
 
 ### Azure Load Balancer
+* works at Network Layer (Layer 4)
 * provides high availability for your applications
 * fully-managed service in Azure
 * allows you to distribute traffic to your backend Virtual machines.
 * ensures equal distribution of requests to VMs.
 * internal load balancer - only balance traffic from within VNet.
 * public load balancer - balance internet traffic to VMs.
+* 2 pricing tiers: Basic (only one VM, availability set or scale set) and Standard (as many VMs as you want)
+* User-Web Server: public load balancer + Web Server-Database Server: internal load balancer.
+* backend pool are the Virtual machines
+* health probe: use to check whether backend VM is healthy or not.
+  configuration parameters:
+  * protocol on which to check, e.g. TCP
+  * Port Number
+* load balancing rules:
+  * how to route traffic
+  * redirect traffic to backend pool
+  * you enable Session Persistence - client IPs can be directed to the same backend VMs.
+  * interval for the health probe
+  
+### Azure Application Gateway
+* load balancer works at Layer 7 - Application Layer
+* fully-managed service
+* you can also add Web Application Firewall to protect web applications against SQL injections, cross-scriptiong attacks etc.
+* example: url-based routing (i.e. request to subpages of website are sent onto different VMs)
   
 ## Core Azure identity services
 ### Azure Active Directory (AD)

@@ -537,65 +537,67 @@ Cognitive Services:
 * Azure Government physically isolated from non-governmental US deployments
 * Azure China 21Vianet: physically separated instance and managed by 21Vianet
 #### Governance
-* Azure Policy
-  * -> SLAs
-  * provides governance for your Azure account
-  * e.g. mandate to ensure all resource have a department tag or no one should be allowed to start a VM with high capacity, etc.
-  * checks existing resources and does not allow to create new resources without adhering to the policy.
-  * policy initiations -> definitions
-  * can be assigned on level *Management Group*, *Subscription*, *Ressource*
-* Role-based access control (RBAC):
-  * on resource group
-  * deny assignments always stronger than role assignments
-* Azure locks
-  * provides ability to ensure that resource is not accidentally deleted or modified
-  * can be defined at the subscription, resource group or resource level.
-  * *CanNotDelete*:
-    - authorized users can still read or modify a resource, but cannot delete it
-  * *ReadOnly*:
-    - authorized users can read a resource, but cannot delete or update a resource.
-* Azure Blueprints
-  * via subscription
-  * audits, deployments etc
-  * subscription governance: billing, access control, limits -> can be hard
-* Tags
-  * Metadata for Azure ressources (name-value pair)
-* Azure Monitor
-  * used to collect and analyse telemetry data from Azure environments and on-premise environments.
-  * view metrics, logs and service health for various resources hosted in Azure.
-* Azure Service Health
-  * status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
-* Azure Advisor:
-  - recommendation engine on how to improve *high availability*, *security*, *performance* and *cost* e.g. *Follow security center recommendations*.
+##### Azure Policy
+* -> SLAs
+* provides governance for your Azure account
+* e.g. mandate to ensure all resource have a department tag or no one should be allowed to start a VM with high capacity, etc.
+* checks existing resources and does not allow to create new resources without adhering to the policy.
+* policy initiations -> definitions
+* can be assigned on level *Management Group*, *Subscription*, *Ressource*
+##### Role-based access control (RBAC):
+* on resource group
+* deny assignments always stronger than role assignments
+##### Azure locks
+* provides ability to ensure that resource is not accidentally deleted or modified
+* can be defined at the subscription, resource group or resource level.
+* *CanNotDelete*:
+  - authorized users can still read or modify a resource, but cannot delete it
+* *ReadOnly*:
+  - authorized users can read a resource, but cannot delete or update a resource.
+##### Azure Blueprints
+* via subscription
+* audits, deployments etc
+* subscription governance: billing, access control, limits -> can be hard
+##### Tags
+* Metadata for Azure ressources (name-value pair)
+##### Azure Monitor
+* used to collect and analyse telemetry data from Azure environments and on-premise environments.
+* view metrics, logs and service health for various resources hosted in Azure.
+##### Azure Service Health
+* status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
+##### Azure Advisor:
+- recommendation engine on how to improve *high availability*, *security*, *performance* and *cost* e.g. *Follow security center recommendations*.
 
 ## 4 Understand Azure Pricing and Support
 ### Cost Estimation
-- pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator
-  - configure and estimate the costs for Azure products
-- total cost of ownership calculator: https://azure.microsoft.com/en-us/tco/calculator
-  - estimate the cost savings you can realize by migrating your workloads to Azure
+#### pricing calculator
+- https://azure.microsoft.com/en-us/pricing/calculator
+- configure and estimate the costs for Azure products
+#### total cost of ownership calculator
+- https://azure.microsoft.com/en-us/tco/calculator
+- estimate the cost savings you can realize by migrating your workloads to Azure
 
 ### Cost Management
-* Cost Management and Billing:
-  - costs till date
-  - prior invoices
-  - view a drill down of costs incurred
-  - you can create filters on the costs.
-  - you can set budgets and raise alerts.
-  - using tags -> you can group costs
-  - reservations: pre-pay for services such as VMs, SQL databases for one or three year term
+#### Cost Management and Billing
+- costs till date
+- prior invoices
+- view a drill down of costs incurred
+- you can create filters on the costs.
+- you can set budgets and raise alerts.
+- using tags -> you can group costs
+- reservations: pre-pay for services such as VMs, SQL databases for one or three year term
 Note:
-  - costs are resource-specific
-  - costs are location-specific: : most expensive -> Brazil, cheapest -> West US 1,2
+- costs are resource-specific
+- costs are location-specific: : most expensive -> Brazil, cheapest -> West US 1,2
   
 ### Subscription offers
- * free
- * pay-as-you-go
- * enterprise agreement
- * student/teacher
- * account can have more than one subscription
- * Azure free account:
-   * 12 months + 200$ credit for first 30 days 
+* free
+* pay-as-you-go
+* enterprise agreement
+* student/teacher
+* account can have more than one subscription
+* Azure free account:
+  * 12 months + 200$ credit for first 30 days 
 
 NOTE: services available depends on subscription
 

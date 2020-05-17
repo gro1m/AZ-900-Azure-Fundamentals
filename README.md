@@ -1,4 +1,4 @@
-# AZ-900-Azure-Fundamentals
+# Summary for Exam AZ-900: Microsoft Azure Fundamentals
 Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
 
 Overview: https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUY

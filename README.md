@@ -502,6 +502,7 @@ Cognitive Services:
   * something you know (password)
   * something you possess (key, mobile authenticator app)
   * something you are (fingerprint)
+### Security Tools and features
 #### Azure Key Vault
 * fully managed and serverless service.
 * secrets, key and certificate management (control access etc.)
@@ -511,19 +512,15 @@ Cognitive Services:
 * secrets backed by Hardware security modules
 * use case scenario 1: VM with an application code that needs to reference a SQL Database. application needs a password to get to SQL Database.
 * use case scenario 2: encryption of data in a data store. usually would need an encryption key together with an encryption algorithm. (generation of keys, key lifecycle, securely access the keys) 
-#### Security Tools and features
-* Azure Security Center
-  * security management system
-  * does an assessment of the resources hosted in Azure and decides whether they are secure or not.
-  * raises threat prevention recommendations and threat detection alerts.
-* Azure Key Vault
-  * password and certificates securely stored
-  * backed by hardware security modules (MSMs)
-  * cannot be moved
-* AIP: Azure Information Protection
-* Azure Advanced Threat Protection (ATP)
-  * protect identities stored in Azure AD.
-  * identify and investigate suspicious user activities
+* cannot be moved
+#### Azure Security Center
+* security management system
+* does an assessment of the resources hosted in Azure and decides whether they are secure or not.
+* raises threat prevention recommendations and threat detection alerts.
+#### Azure Information Protection (AIP)
+#### Azure Advanced Threat Protection (ATP)
+* protect identities stored in Azure AD.
+* identify and investigate suspicious user activities
 #### Compliance
 * GDPR: General Data Protection Regulation - law on data protection and privacy
 * ISO: International Standard Organization - independent non-governmental organization
@@ -540,7 +537,8 @@ Cognitive Services:
 * Azure Government physically isolated from non-governmental US deployments
 * Azure China 21Vianet: physically separated instance and managed by 21Vianet
 #### Governance
-* Azure Policy -> SLAs:
+* Azure Policy
+  * -> SLAs
   * provides governance for your Azure account
   * e.g. mandate to ensure all resource have a department tag or no one should be allowed to start a VM with high capacity, etc.
   * checks existing resources and does not allow to create new resources without adhering to the policy.

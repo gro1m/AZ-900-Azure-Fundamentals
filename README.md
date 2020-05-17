@@ -6,11 +6,11 @@ Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
 * 4 Understand Azure pricing and support
 
 ## 1 Understand cloud concepts 
-* renting resources, which among others can provide
-  * compute power
-  * storage 
-  * secure network connections
-  * analytics
+renting resources, which among others can provide
+* compute power
+* storage 
+* secure network connections
+* analytics
 
 cloud providers:
 * Microsoft
@@ -95,11 +95,12 @@ https://azure.microsoft.com/en-us/global-infrastructure/regions/
 availability zones:
 * Unique physical locations within a region. Each zone is made up of one or more datacenters equipped with independent power, cooling, and networking.
 
-* Azure Free Account:
-  - 12 months of popular free services + $200 credit for 30 days + 25+services which are always free.
-  - https://azure.microsoft.com/en-us/free/
+Azure Free Account:
+  * 12 months of popular free services + $200 credit for 30 days + 25+services which are always free.
+  * https://azure.microsoft.com/en-us/free/
 
-* Azure Portal:
+Azure Portal:
+  * https://portal.azure.com
 
 region pairs:
 * same services, same legal jurisdiction

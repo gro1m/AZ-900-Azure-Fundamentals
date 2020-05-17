@@ -456,8 +456,15 @@ etc.
 ### Perimeter Layer
 #### Azure Firewall
 * FaaS: Firewall as a SErvice - inbound/outbound protection
+* high availability and automatic scalability
 #### Azure DDoS
 * Distributed Denial of Service - bombardment of the service with requests
+* Basic Protection always enabled
+* real-time monitoring of traffic and mitigation of common network-level attacks
+* Standard Protection
+  * real time metrics and diagnostic logs via Azure Monitor 
+  * post attack mitigation reports
+  * access to DDoS experts during an active attack
 ### Network Layer
 * Network Security Group (NSGs) 
   * "internetcable with some features"
@@ -544,12 +551,17 @@ etc.
  
 #### Security Tools and features
 * Azure Security Center
+  * security management system
+  * does an assessment of the resources hosted in Azure and decides whether they are secure or not.
+  * raises threat prevention recommendations and threat detection alerts.
 * Azure Key Vault
   * password and certificates securely stored
   * backed by hardware security modules (MSMs)
   * cannot be moved
 * AIP: Azure Information Protection
-* ATP: Azure Advanced Threat
+* Azure Advanced Threat Protection (ATP)
+  * protect identities stored in Azure AD.
+  * identify and investigate suspicious user activities
 
 #### Compliance
 * GDPR: General Data Protection Regulation - law on data protection and privacy
@@ -561,27 +573,7 @@ etc.
   * audit reports on how Microsoft ensures that the products hosted in Azure comply with various standards (NIST; ISO, GDPR)
 * Azure Government: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome
   * meant for government organizations
-
-#### Governance
-* Azure Policy -> SLAs:
-  * policy initiations -> definitions
-  * can be assignedon level *Management Group*, *Subscription*, *Ressource*
-* Role-based access control (RBAC):
-  * on resource group
-  * deny assignments always stronger than role assignments
-* Resource locks
-  * protect your Azure resources from accidental deletion or modification
-* Azure Blueprints
-  * via subscription
-  * audits, deployments etc
-  * subscription governance: billing, access control, limits -> can be hard
-* Tags
-  * Metadata for Azure ressources (name-value pair)
-* Azure Monitor
-  * metrics
-  * activity log
-* Azure Service Health
-  * status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
+  
 * Privacy statement
   * defines how data is protected
 * Trust Center
@@ -592,54 +584,88 @@ etc.
 * Azure Government physically isolated from non-governmental US deployments
 * Azure China 21Vianet: physically separated instance and managed by 21Vianet
 
-## 4 Pricing/Support Plan
-subscription offers:
+#### Governance
+* Azure Policy -> SLAs:
+  * provides governance for your Azure account
+  * e.g. mandate to ensure all resource have a department tag or no one should be allowed to start a VM with high capacity, etc.
+  * checks existing resources and does not allow to create new resources without adhering to the policy.
+  * policy initiations -> definitions
+  * can be assigned on level *Management Group*, *Subscription*, *Ressource*
+* Role-based access control (RBAC):
+  * on resource group
+  * deny assignments always stronger than role assignments
+* Azure locks
+  * provides ability to ensure that resource is not accidentally deleted or modified
+  * can be defined at the subscription, resource group or resource level.
+  * *CanNotDelete*:
+    - authorized users can still read or modify a resource, but cannot delete it
+  * *ReadOnly*:
+    - authorized users can read a resource, but cannot delete or update a resource.
+* Azure Blueprints
+  * via subscription
+  * audits, deployments etc
+  * subscription governance: billing, access control, limits -> can be hard
+* Tags
+  * Metadata for Azure ressources (name-value pair)
+* Azure Monitor
+  * used to collect and analyse telemetry data from Azure environments and on-premise environments.
+  * view metrics, logs and service health for various resources hosted in Azure.
+* Azure Service Health
+  * status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
+* Azure Advisor:
+  - recommendation engine on how to improve *high availability*, *security*, *performance* and *cost* e.g. *Follow security center recommendations*.
+
+
+## 4 Understand Azure Pricing and Support
+### Cost Estimation
+- pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator
+  - configure and estimate the costs for Azure products
+- total cost of ownership calculator: https://azure.microsoft.com/en-us/tco/calculator
+  - estimate the cost savings you can realize by migrating your workloads to Azure
+
+### Cost Management
+* Cost Management and Billing:
+  - costs till date
+  - prior invoices
+  - view a drill down of costs incurred
+  - you can create filters on the costs.
+  - you can set budgets and raise alerts.
+  - using tags -> you can group costs
+  - reservations: pre-pay for services such as VMs, SQL databases for one or three year term
+Note:
+  - costs are resource-specific
+  - costs are location-specific: : most expensive -> Brazil, cheapest -> West US 1,2
+  
+### Subscription offers
  * free
  * pay-as-you-go
  * enterprise agreement
  * student/teacher
  * account can have more than one subscription
-Azure free account:
- * 12 months + 200$ credit for first 30 days 
-web-direct
-cloud solution providers
-ressource type: resource-specific costs
-services: depends on subscription
-location: most expensive -> Brazil, cheapest -> West US 1,2
-bandwidth: data transfer
+ * Azure free account:
+   * 12 months + 200$ credit for first 30 days 
 
-pricing calculator
-total cost of ownership calculator
+NOTE: services available depends on subscription
 
-azure reservations: reserve ressources in advance -> pay less
-tags: lets you mark cost owner
-
-Azure Cost Management:
-  * reporting
-  * data environment
-  * Budgets
-  * Alerting
-  * Recommendations
   
-Cost Management and Billing:
-  * Cost analysis by location, tag, resource group
-  
-Support plan
-  * Basic (always, default)
-  * Developer (24-hr-answer from support)
-  * Standard (instant answer)
-  * Professional Direct
-  * Premier: support engineers + technical account manager + implementation support
-  
-Support channels:
+### Azure Support plans
+* Basic (always, default)
+* Developer (24-hr-answer from support)
+* Standard (instant answer)
+* Professional Direct
+* Premier: support engineers + technical account manager + implementation support
+* Support channels (Help+Support):
   * MSDN: Microsoft Developer Network
   * Stack Overflow
   * Server Fault
   * Microsoft Azure General Feedback
   * @AzureSupport
-  * Knowledge Center
+  * Knowledge Center (https://azure.microsoft.com/en-us/resources/knowledge-center/)
   
   
+### Azure Service Level Agreements
+* https://azure.microsoft.com/en-us/support/legal/sla/
+
 SLA          | Downtime (Month) | Downtime (Year)
 ------------ | -------------    | ---------------
 99.9%        | 43.2 mins        |  8.76 h
@@ -648,12 +674,11 @@ SLA          | Downtime (Month) | Downtime (Year)
 
 composite SLA is obtained by multiplying individual SLAs.
 
-private preview: 
-  * Azure feature available to certain Azure customers for evaluation purposes
+Azure Updates on https://azure.microsoft.com/en-us/updates/.
 
-public preview:
+private preview: Azure feature available to certain Azure customers for evaluation purposes
 
-preview.portal.azure.com
+public preview: http://preview.portal.azure.com
 
 
 ## 5 Lessons learned and References from practice tests

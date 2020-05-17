@@ -202,7 +202,7 @@ Azure Kubernetes services -> administer big amount of containers (orchestrator)
 * fully-managed service
 * you can also add Web Application Firewall to protect web applications against SQL injections, cross-scriptiong attacks etc.
 * example: url-based routing (i.e. request to subpages of website are sent onto different VMs)
-### Azure Content Delivery Network (CDN)
+#### Azure Content Delivery Network (CDN)
 * effective delivery of web content to users
 * users around the world get a seemless experience in terms of latency, response.
 * popular content can be cached.
@@ -254,11 +254,11 @@ sudo stress --cpu 100
 ```
 
 ### Azure storage services
-IaaS:
+#### IaaS
 * VM -> disk is created and stored in storage account
 * network storage -> file share
 * disks / files
-PaaS:
+#### PaaS
 * Containers: 
   * Block Blobs (small images) 
   * Page Blobs (data is loaded step-by-step)
@@ -266,47 +266,40 @@ PaaS:
 * Tables:
   * key-value lookup (NoSQL solutions, scale in the peta-domain of data)
 * Queues (Message Queues), e.g. jobs might use a VM sequentially so that there is not a problem with dealing a huge amount of requests.
-
-* Blob Storage
+#### Blob Storage
   - object storage
   - store unstructured data e.g. files, videos, images, log files
   - need to create a Storage Account and inside Containers you store objects
   - hot storage tier - data accessed frequently
   - cool tier: infrequently accessed data
   - archive tier: rarely accessed data (can only be set at object level, not at Container level) - objects cannot be accessed in this tier.
-* File Storage
+#### File Storage
   - allows file retrieval via the Server Message Block protocol
   - can mount file shares on Windows, Linux and Mac based machines
   - do not need file servers.
-* Table Storage
+#### Table Storage
   - used for storing structured NoSQL data
   - key attribute store
   - cost-effective option for storage of table like user data for applications.
-* Queue storage
+#### Queue storage
   - used for storage and retrieval of message
   - when you want to decouple components of an application
   - a single message in the queue can be up to 64KB in size
   - can store millions of messages in the queue.
-
-* Account kind (version)
+#### Account kind (version)
   - v2 -> access tier option
   - v1 -> does not have all options
   - Blob Storage -> only blob storage
-  
-* Change access level:
+  - Storage Version 2 , Version 1 only Containers available  
+#### Change access level:
   - Blob (anonymous read access for blob only) enables to get it via URL
-
-Performance: no standard disks
-Account kind: Storage Version 2 , Version 1 only Containers available
-
-Replication: 
+#### Replication 
 e.g. West Europe.
 * locally-redundant storage: -> 3 copies
 * zone-redundant storage: separate electricity, cooling and network
 * geo-redundant storage: six copies in West-Europe and North-Europe (region pairs)
 * read-access geo-redundant storage: second endpoint has read access
-
-Access tier:
+#### Access tier
 * hot: for a lot of data accesses: storage expensive, access cheap
 * cool: for small data access: storage cheap, access expensive
 * archive: storage very cheap, access very expensive (stored on magnetic tape)
@@ -316,7 +309,6 @@ Access tier:
 structured data -> SQL-databases (tables), relational databases
 semi-structured data -> NoSQL-databases (JSON, BLOBs, books, blogs, HTML)
 unstructured data
-
 #### Azure Cosmos DB
 * multi-model database:
   - you can create CosmosDB account and has support for different APIs (Table, SQL, MongoDB, Cassandra, Gremlin, etc.)
@@ -327,11 +319,9 @@ unstructured data
 * 99.999% availability for reads and write
 * ability to scal from thousands to hundreds of millions or requests/sec
 * guarantess less than 10 ms latencies for reads and writes at 99% percentile.
-
 #### Azure SQL Database
 * PaaS from Microsoft SQL Server
 * 99.99% of availability.
-
 #### Azure SQL Data Warehouse
 * Enterprise Data Warehouse on Azure.
 * Used to store petabytes of data.
@@ -341,7 +331,6 @@ unstructured data
   * improves query performance
 * you can perform query analysis over large data sets
 * not for transactional data (use SQL Database).
-
 #### Azure DataBase Migration
 
 ### Azure Marketplace
@@ -457,18 +446,18 @@ etc.
   * access to DDoS experts during an active attack
   
 ### Network Layer
-* Network Security Group (NSGs) 
-  * "internetcable with some features"
-  * consists of rules for inbound and outbound traffic
-  * used to control traffic into your subnet or Virtual Machine
-  * traffic within a Virtual Network is automatically allowed
-  * you need to explicitly allow traffic from the Internet
-  * VMs inside same virtual net can connect via the private IP address
-  * can be applied to Network Interface Card or the subnet itself
-  * rule can be either an IP address, a CIDR block, service tag or application security group
-  * you define port numbers for the rule
-  * you define the protocol
-  * you decide whether to allow or deny the action
+#### Network Security Group (NSGs) 
+* "internetcable with some features"
+* consists of rules for inbound and outbound traffic
+* used to control traffic into your subnet or Virtual Machine
+* traffic within a Virtual Network is automatically allowed
+* you need to explicitly allow traffic from the Internet
+* VMs inside same virtual net can connect via the private IP address
+* can be applied to Network Interface Card or the subnet itself
+* rule can be either an IP address, a CIDR block, service tag or application security group
+* you define port numbers for the rule
+* you define the protocol
+* you decide whether to allow or deny the action
 
 ### Core Azure identity services
 * authentication: 
@@ -497,8 +486,7 @@ etc.
   - Identity Protection: provides conditional access to applications (MFA = multi-factor authentication)
   - Privileged Identity Management: help discover, restrict and monitor administrators and their access to resources.
 * creating a new user does not give him yet an authorizations, i.e. asks him to generate a free account. Needs Role-Based Access Control
-
-#### Role-Based Access Control
+#### Role-Based Access Control (RBAC)
 * provides authorization mechanism, i.e. to provide a user access to resources
 * example: Virtual Machine Contributor role to perform management activities on Virtual Machines.
 * you can also make custom roles
@@ -512,9 +500,7 @@ etc.
   - contributor: user can manage all resources (but not access to ressources
   - https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
 * via IAM -> Access control -> Add Role Assignment.
-
-
-#### Azure Multi-Factor Authentication:
+#### Azure Multi-Factor Authentication (MFA)
 * provides an extra layer of security during authentication
 * needs Azure AD Premium P2
   * options for conditional access policies
@@ -523,8 +509,7 @@ etc.
   * something you know (password)
   * something you possess (key, mobile authenticator app)
   * something you are (fingerprint)
-  
-#### Azure Key Vault:
+#### Azure Key Vault
 * fully managed and serverless service.
 * secrets, key and certificate management (control access etc.)
 * control access to tokens
@@ -532,8 +517,7 @@ etc.
 * provision, manage and deploy public and private Secure Socket Layer / Transport Layer Security (SSL/TLS) certificates
 * secrets backed by Hardware security modules
 * use case scenario 1: VM with an application code that needs to reference a SQL Database. application needs a password to get to SQL Database.
-* use case scenario 2: encryption of data in a data store. usually would need an encryption key together with an encryption algorithm. (generation of keys, key lifecycle, securely access the keys)
- 
+* use case scenario 2: encryption of data in a data store. usually would need an encryption key together with an encryption algorithm. (generation of keys, key lifecycle, securely access the keys) 
 #### Security Tools and features
 * Azure Security Center
   * security management system
@@ -547,7 +531,6 @@ etc.
 * Azure Advanced Threat Protection (ATP)
   * protect identities stored in Azure AD.
   * identify and investigate suspicious user activities
-
 #### Compliance
 * GDPR: General Data Protection Regulation - law on data protection and privacy
 * ISO: International Standard Organization - independent non-governmental organization
@@ -563,7 +546,6 @@ etc.
 * Azure Government services meets needs from US agencies
 * Azure Government physically isolated from non-governmental US deployments
 * Azure China 21Vianet: physically separated instance and managed by 21Vianet
-
 #### Governance
 * Azure Policy -> SLAs:
   * provides governance for your Azure account
@@ -663,64 +645,34 @@ public preview: http://preview.portal.azure.com
 - PowerShell can be installed on MacOS: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
 - If you are looking at storing data that is not frequently used use Azure Data Lake. Also needed for PowerBI.
 Azure SQL, Azure PostgreSQL or Cosmos DB for frequently accessed data.
-
 * https://docs.microsoft.com/en-us/azure/active-directory/develop/authentication-vs-authorization
 - Authentication is the process of proving you are who you say you are. Authentication is sometimes shortened to AuthN. Microsoft identity platform implements the OpenID Connect protocol for handling authentication.
-
 - Authorization is the act of granting an authenticated party permission to do something. It specifies what data you're allowed to access and what you can do with that data. Authorization is sometimes shortened to AuthZ. Microsoft identity platform implements the OAuth 2.0 protocol for handling authorization.
-
 - Virtual Machine Scale Sets: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
-
 - Azure Privileged Identity Management: https://docs.microsoft.com/en-us/azure/virtual-machine-scale-sets/overview
-
 - Azure Application Insights: https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6
-
 - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview: You can have resources (e.g. storage) in same resource groups, but different locations.
-
 - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/tag-resources: (resource group) tags are not inherited.
-
 - permissions are inherited
-
 - https://docs.microsoft.com/en-us/azure/advisor/advisor-security-recommendations: Azure Security gives security recommendations, not Azure Advisor
-
 - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview: Azure Resource Manager ideal solution if you have to deploy the same type of resource repeatedly.
-
 - https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings: configure MFA
-
 - https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection
-
 - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/lock-resources: Azure Locks are used to prevent accidental modification or deletion of resources.
-
 - https://docs.microsoft.com/en-us/azure/governance/policy/overview: Azure Policy
-
 - https://docs.microsoft.com/en-us/azure/key-vault/general/basic-concepts: Azure Key Vault used for security purposes such as key and secret management.
-
 - support plans: https://azure.microsoft.com/en-us/support/plans/
-
 - Azure Pricing FAQ: https://azure.microsoft.com/en-us/pricing/faq/
-
 - Azure Cost Management + Billing: https://azure.microsoft.com/en-us/pricing/details/cost-management/
-
 - Cloudyn service: https://docs.microsoft.com/en-us/azure/cost-management-billing/cloudyn/overview
-
 - Pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator/
-
 - Azure Resiliency: https://azure.microsoft.com/en-us/features/resiliency/
-
 - https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blob-storage-tiers?tabs=azure-portal
-
 - Azure Service Bus: https://docs.microsoft.com/en-us/azure/service-bus-messaging/service-bus-messaging-overview
-
 - Azure Reservations: https://docs.microsoft.com/en-us/azure/cost-management-billing/reservations/save-compute-costs-reservations
-
 - https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/azure-subscription-service-limits
-
 - Azure Policy: https://docs.microsoft.com/en-us/azure/governance/policy/overview
-
 - Azure Role-Based Access Control: https://docs.microsoft.com/en-us/azure/role-based-access-control/overview
-
 - https://docs.microsoft.com/en-us/azure/governance/management-groups/
-
 - Azure Functions: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
-
 - Azure Logic Apps: https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview

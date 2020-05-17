@@ -473,9 +473,32 @@ etc.
   * you decide whether to allow or deny the action
 
 ### Core Azure identity services
+* authentication: 
+  - process of identifying a user 
+  - simplest form: user name and password
+* authorization: 
+  - process of giving access to resources for the user identity (after authentication)
 #### Azure Active Directory (AD)
-* authentication: identifies person
-* authorization: determines access levels
+* identity and access management service
+* you can manage access for users to Azure portal and other apps such as Office 365.
+* you can also manage access for internal applications
+* can be used for authentication purpose
+* Azure AD Free: 
+  - Users and Group management
+  - you can synchronize users from your on-premise environment
+  - you get basic reports
+  - you can also use Single-Sign-On (SSO) capabilities
+* Azure AD Basic:
+  - control access via groups
+  - self-service password reset (user can reset password himself instead of IT admin resetting the user password)
+* Azure AD Premium P1:
+  - supports dynamic groups
+  - cloud write back capabilities
+* Azure AD Premium P2:
+  - Identity Protection: provides conditional access to applications (MFA = multi-factor authentication)
+  - Privileged Identity Management: help discover, restrict and monitor administrators and their access to resources.
+* creating a new user does not give him yet an authorizations, i.e. asks him to generate a free account. Needs Role-Based Access Control
+
 1. SSO: Single-Sign-On (device is deposited)
 2. application management: give access to applications
 3. authentication
@@ -483,11 +506,41 @@ etc.
 5. B2C
 6. device management
 
-* Azure Multi-Factor Authentication:
-3 factors: 
+#### Role-Based Access Control
+* provides authorization mechanism, i.e. to provide a user access to resources
+* example: Virtual Machine Contributor role to perform management activities on Virtual Machines.
+* you can also make custom roles
+* you can apply roles at different scope levels:
+  - subscription
+  - resource group
+  - resource
+* 3 main categories:
+  - owner: user can manage everything
+  - reader: user can only view everything
+  - contributor: user can manage all resources (but not access to ressources
+  - https://docs.microsoft.com/en-us/azure/role-based-access-control/built-in-roles
+* via IAM -> Access control -> Add Role Assignment.
+
+
+#### Azure Multi-Factor Authentication:
+* provides an extra layer of security during authentication
+* needs Azure AD Premium P2
+  * options for conditional access policies
+  * select app Microsoft Azure Management (MFA for Azure Portal) -> grant access: Require MFA
+* 3 factors: 
   * something you know (password)
   * something you possess (key, mobile authenticator app)
   * something you are (fingerprint)
+  
+#### Azure Key Vault:
+* fully managed and serverless service.
+* secrets, key and certificate management (control access etc.)
+* control access to tokens
+* create and control encryption keys.
+* provision, manage and deploy public and private Secure Socket Layer / Transport Layer Security (SSL/TLS) certificates
+* secrets backed by Hardware security modules
+* use case scenario 1: VM with an application code that needs to reference a SQL Database. application needs a password to get to SQL Database.
+* use case scenario 2: encryption of data in a data store. usually would need an encryption key together with an encryption algorithm. (generation of keys, key lifecycle, securely access the keys)
  
 #### Security Tools and features
 * Azure Security Center
@@ -497,6 +550,17 @@ etc.
   * cannot be moved
 * AIP: Azure Information Protection
 * ATP: Azure Advanced Threat
+
+#### Compliance
+* GDPR: General Data Protection Regulation - law on data protection and privacy
+* ISO: International Standard Organization - independent non-governmental organization
+* NIST: National Institute of Standards and Technology.
+* Microsoft Privacy Statement: https://privacy.microsoft.com/en-us/privacystatement
+  * collection of personal data, 
+* Service Trust Portal: https://servicetrust.microsoft.com
+  * audit reports on how Microsoft ensures that the products hosted in Azure comply with various standards (NIST; ISO, GDPR)
+* Azure Government: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome
+  * meant for government organizations
 
 #### Governance
 * Azure Policy -> SLAs:

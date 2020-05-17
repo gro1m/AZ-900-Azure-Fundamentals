@@ -544,7 +544,7 @@ Cognitive Services:
 * checks existing resources and does not allow to create new resources without adhering to the policy.
 * policy initiations -> definitions
 * can be assigned on level *Management Group*, *Subscription*, *Ressource*
-##### Role-based access control (RBAC):
+##### Role-based access control (RBAC)
 * on resource group
 * deny assignments always stronger than role assignments
 ##### Azure locks
@@ -565,7 +565,7 @@ Cognitive Services:
 * view metrics, logs and service health for various resources hosted in Azure.
 ##### Azure Service Health
 * status, e.g. stopped (deallocated -> no ressources -> no costs), running (ip-address -> available)
-##### Azure Advisor:
+##### Azure Advisor
 - recommendation engine on how to improve *high availability*, *security*, *performance* and *cost* e.g. *Follow security center recommendations*.
 
 ## 4 Understand Azure Pricing and Support

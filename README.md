@@ -108,6 +108,7 @@ Azure Portal:
 region pairs:
 * same services, same legal jurisdiction
 * Microsoft tries to separate them at least 300 miles apart, i.e. if catastrophe hits one region, you could transfer it to the region pair
+* Brazil is not a paired region, i.e. is not used as backup.
 
 geographies:
 * discrete markets
@@ -151,6 +152,67 @@ Azure Resource Manager:
 * code in cloud that only costs when in use
 * compute actions based on an event
 
+### Container services
+a container is a minimal version of a VM, a VM image is typically quite big.
+Azure Container services -> PaaS offering to upload.
+Azure Kubernetes services -> administer big amount of containers (orchestrator)
+
+### Azure network services ("Router to which you attach VMs")
+#### Azure Virtual Network
+  - allows yout define your own network in Azure
+  - can consist of multiple subnets
+  - needs to be assigned an address space, e.g. 10.0.0.0/16.
+  - subnet address space has to be subset of address space of Virtual Network, e.g. 10.0.1.0/24 and 10.0.2.0/24. VMs created in Subnet.
+  - each machine in the subnet will get a private IP address, e.g. 10.0.1.4 and 10.0.2.4
+  - a public address (allows to connect to Internet) can also be assigned to VM e.g. 40.11.112.4 and e.g. 50.1.200.4
+  - Virtual Network Peering between networks so that VMs can communicate across VNets.
+#### Azure Load Balancer
+* works at Network Layer (Layer 4)
+* provides high availability for your applications
+* fully-managed service in Azure
+* allows you to distribute traffic to your backend Virtual machines.
+* ensures equal distribution of requests to VMs.
+* internal load balancer - only balance traffic from within VNet.
+* public load balancer - balance internet traffic to VMs.
+* 2 pricing tiers: Basic (only one VM, availability set or scale set) and Standard (as many VMs as you want)
+* User-Web Server: public load balancer + Web Server-Database Server: internal load balancer.
+* backend pool are the Virtual machines
+* health probe: use to check whether backend VM is healthy or not.
+  configuration parameters:
+  * protocol on which to check, e.g. TCP
+  * Port Number
+* load balancing rules:
+  * how to route traffic
+  * redirect traffic to backend pool
+  * you enable Session Persistence - client IPs can be directed to the same backend VMs.
+  * interval for the health probe
+#### Azure VPN Gateway
+* used to connect your on-premise network to an Azure network in an encrypted manner.
+* Point to Site Connection:
+  - connect workstations to an Azure Virtual Network
+  - you need to install a VPN client
+  - you need to make use of certificates for authenticating clients
+  - typically for limited number of clients
+* Site to Site Connection
+  - used to connect on-premise networks to Azure networks.
+  - traffic encrypted using IPSec protocol
+  - on-premise network needs a VPN device with an IP address that is routable over the Internet.
+#### Azure Application Gateway - on DNS level
+* load balancer works at Layer 7 - Application Layer
+* fully-managed service
+* you can also add Web Application Firewall to protect web applications against SQL injections, cross-scriptiong attacks etc.
+* example: url-based routing (i.e. request to subpages of website are sent onto different VMs)
+### Azure Content Delivery Network (CDN)
+* effective delivery of web content to users
+* users around the world get a seemless experience in terms of latency, response.
+* popular content can be cached.
+* edge servers (point of presence): deliver content
+  * contacts origin to get resource if it does not have it and then caches it based on TTL (Time to live).
+* you need to create a CDN profile and then a CDN endpoint.
+* you can attach multiple endpoints to a CDN profile.
+* goes through Azure Backbone (WAN-Link via undersea network cables that belong to Microsoft)
+* Example: Web application from Europe puts in onto a US edge device (marked as small rectangles). After 30 or 90 days fetch from original place. white routes means there is an availability zone (threee separate zones with independent electricity, cooling and network infrastructure)
+
 ### Availability Options for VMs
 * single VM: 99.9%
 * availability set: 99.95%
@@ -176,28 +238,6 @@ Azure Resource Manager:
   - Public IP address
   - Network security group
 
-### Container services
-a container is a minimal version of a VM, a VM image is typically quite big.
-Azure Container services -> PaaS offering to upload.
-Azure Kubernetes services -> administer big amount of containers (orchestrator)
-
-### Azure network services ("Router to which you attach VMs")
-* Azure Virtual Network
-  - allows yout define your own network in Azure
-  - can consist of multiple subnets
-  - needs to be assigned an address space, e.g. 10.0.0.0/16.
-  - subnet address space has to be subset of address space of Virtual Network, e.g. 10.0.1.0/24 and 10.0.2.0/24. VMs created in Subnet.
-  - each machine in the subnet will get a private IP address, e.g. 10.0.1.4 and 10.0.2.4
-  - a public address (allows to connect to Internet) can also be assigned to VM e.g. 40.11.112.4 and e.g. 50.1.200.4
-  - Virtual Network Peering between networks so that VMs can communicate across VNets.
-* Azure Load Balancer
-* VPN Gateway
-* Azure Application Gateway - on DNS level
-* Content Delivery Network 
-  * goes through Azure Backbone (WAN-Link via undersea network cables that belong to Microsoft)
-  * Example: Web application from Europe puts in onto a US edge device (marked as small rectangles). After 30 or 90 days fetch from original place. white routes means there is an availability zone (threee separate zones with independent electricity, cooling and network infrastructure)
-* Brazil is not a paired region, i.e. is not used as backup.
-
 ### Virtual Machine Scale Sets
 * allows you to scale your infrastracture based on demand
 * infrastracture can scale out when demand increased
@@ -212,34 +252,6 @@ Azure Kubernetes services -> administer big amount of containers (orchestrator)
 sudo apt get install stress
 sudo stress --cpu 100
 ```
-
-### Azure Load Balancer
-* works at Network Layer (Layer 4)
-* provides high availability for your applications
-* fully-managed service in Azure
-* allows you to distribute traffic to your backend Virtual machines.
-* ensures equal distribution of requests to VMs.
-* internal load balancer - only balance traffic from within VNet.
-* public load balancer - balance internet traffic to VMs.
-* 2 pricing tiers: Basic (only one VM, availability set or scale set) and Standard (as many VMs as you want)
-* User-Web Server: public load balancer + Web Server-Database Server: internal load balancer.
-* backend pool are the Virtual machines
-* health probe: use to check whether backend VM is healthy or not.
-  configuration parameters:
-  * protocol on which to check, e.g. TCP
-  * Port Number
-* load balancing rules:
-  * how to route traffic
-  * redirect traffic to backend pool
-  * you enable Session Persistence - client IPs can be directed to the same backend VMs.
-  * interval for the health probe
-  
-### Azure Application Gateway
-* load balancer works at Layer 7 - Application Layer
-* fully-managed service
-* you can also add Web Application Firewall to protect web applications against SQL injections, cross-scriptiong attacks etc.
-* example: url-based routing (i.e. request to subpages of website are sent onto different VMs)
-
 
 ### Azure storage services
 IaaS:
@@ -332,17 +344,6 @@ unstructured data
 
 #### Azure DataBase Migration
 
-### Azure Content Delivery Network (CDN)
-* effective delivery of web content to users
-* users around the world get a seemless experience in terms of latency, response.
-* popular content can be cached.
-* edge servers (point of presence): deliver content
-  * contacts origin to get resource if it does not have it and then caches it based on TTL (Time to live).
-* you need to create a CDN profile and then a CDN endpoint.
-* you can attach multiple endpoints to a CDN profile.
-
-
-
 ### Azure Marketplace
   * Microsoft products
 
@@ -387,18 +388,6 @@ Cognitive Services:
 * security
 * VisualStudio Integration
 etc.
-  
-### Azure VPN Gateway
-* used to connect your on-premise network to an Azure network in an encrypted manner.
-* Point to Site Connection:
-  - connect workstations to an Azure Virtual Network
-  - you need to install a VPN client
-  - you need to make use of certificates for authenticating clients
-  - typically for limited number of clients
-* Site to Site Connection
-  - used to connect on-premise networks to Azure networks.
-  - traffic encrypted using IPSec protocol
-  - on-premise network needs a VPN device with an IP address that is routable over the Internet.
   
 ### Azure Web App
 - PaaS for hosting web apps using Azure App Service.
@@ -735,8 +724,3 @@ Azure SQL, Azure PostgreSQL or Cosmos DB for frequently accessed data.
 - Azure Functions: https://docs.microsoft.com/en-us/azure/azure-functions/functions-overview
 
 - Azure Logic Apps: https://docs.microsoft.com/en-us/azure/logic-apps/logic-apps-overview
-  
-
-
-
-

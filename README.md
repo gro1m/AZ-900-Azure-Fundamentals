@@ -39,7 +39,7 @@ operational expenditure (opex):
 * example: Black Friday
 
 ### different cloud models
-public cloud:
+#### public cloud
 * example: Microsoft Azure
 * physical infrastructure managed by cloud provider, e.g. Microsoft.
 * secure network-connection
@@ -47,13 +47,13 @@ public cloud:
 * pay-what-you-use
 * fast
 
-private cloud:
+#### private cloud
 * physical infrastracture is managed by your company.
 * motivation: own infrastructure and data.
 * own datacenter
 * own ressource
 
-hybrid cloud:
+#### hybrid cloud
 * connect cloud solution with on-premise infrastructure.
 * public + private cloud
 * highest flexibility

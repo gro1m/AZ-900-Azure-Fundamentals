@@ -1,9 +1,10 @@
 # AZ-900-Azure-Fundamentals
 Exam page: https://www.microsoft.com/en-us/learning/exam-az-900.aspx
+Overview: https://query.prod.cms.rt.microsoft.com/cms/api/am/binary/RE3VwUY
 * 1 Understand cloud concepts (15-20%)
 * 2 Understand core Azure services (30-35%)
-* 3 Understand security, privacy, compliance and trust
-* 4 Understand Azure pricing and support
+* 3 Understand security, privacy, compliance and trust (25-30%)
+* 4 Understand Azure pricing and support (20-25%)
 
 ## 1 Understand cloud concepts 
 renting resources, which among others can provide
@@ -327,7 +328,9 @@ unstructured data
 * you can perform query analysis over large data sets
 * not for transactional data (use SQL Database).
 
-#### Azure Content Delivery Network (CDN)
+#### Azure DataBase Migration
+
+### Azure Content Delivery Network (CDN)
 * effective delivery of web content to users
 * users around the world get a seemless experience in terms of latency, response.
 * popular content can be cached.
@@ -337,7 +340,6 @@ unstructured data
 * you can attach multiple endpoints to a CDN profile.
 
 
-#### Azure DataBase Migration
 
 ### Azure Marketplace
   * Microsoft products
@@ -383,10 +385,6 @@ Cognitive Services:
 * security
 * VisualStudio Integration
 etc.
-#### Azure management tools
-* az cli
-#### Azure Advisor
-* Security
   
 ### Azure VPN Gateway
 * used to connect your on-premise network to an Azure network in an encrypted manner.
@@ -453,6 +451,7 @@ etc.
 * application
   * prevent SQL injection etc.
 * data
+
 ### Perimeter Layer
 #### Azure Firewall
 * FaaS: Firewall as a SErvice - inbound/outbound protection
@@ -465,6 +464,7 @@ etc.
   * real time metrics and diagnostic logs via Azure Monitor 
   * post attack mitigation reports
   * access to DDoS experts during an active attack
+  
 ### Network Layer
 * Network Security Group (NSGs) 
   * "internetcable with some features"
@@ -485,6 +485,7 @@ etc.
   - simplest form: user name and password
 * authorization: 
   - process of giving access to resources for the user identity (after authentication)
+  
 #### Azure Active Directory (AD)
 * identity and access management service
 * you can manage access for users to Azure portal and other apps such as Office 365.
@@ -505,13 +506,6 @@ etc.
   - Identity Protection: provides conditional access to applications (MFA = multi-factor authentication)
   - Privileged Identity Management: help discover, restrict and monitor administrators and their access to resources.
 * creating a new user does not give him yet an authorizations, i.e. asks him to generate a free account. Needs Role-Based Access Control
-
-1. SSO: Single-Sign-On (device is deposited)
-2. application management: give access to applications
-3. authentication
-4. B2B
-5. B2C
-6. device management
 
 #### Role-Based Access Control
 * provides authorization mechanism, i.e. to provide a user access to resources
@@ -568,16 +562,11 @@ etc.
 * ISO: International Standard Organization - independent non-governmental organization
 * NIST: National Institute of Standards and Technology.
 * Microsoft Privacy Statement: https://privacy.microsoft.com/en-us/privacystatement
-  * collection of personal data, 
+  * collection/protection/reasoning behind sharing of personal data, 
 * Service Trust Portal: https://servicetrust.microsoft.com
   * audit reports on how Microsoft ensures that the products hosted in Azure comply with various standards (NIST; ISO, GDPR)
 * Azure Government: https://docs.microsoft.com/en-us/azure/azure-government/documentation-government-welcome
   * meant for government organizations
-  
-* Privacy statement
-  * defines how data is protected
-* Trust Center
-* Service Trust Portal (STP)
 * Compliance Manager
   * compares ressources against own policies
 * Azure Government services meets needs from US agencies
@@ -615,7 +604,6 @@ etc.
 * Azure Advisor:
   - recommendation engine on how to improve *high availability*, *security*, *performance* and *cost* e.g. *Follow security center recommendations*.
 
-
 ## 4 Understand Azure Pricing and Support
 ### Cost Estimation
 - pricing calculator: https://azure.microsoft.com/en-us/pricing/calculator
@@ -647,7 +635,6 @@ Note:
 
 NOTE: services available depends on subscription
 
-  
 ### Azure Support plans
 * Basic (always, default)
 * Developer (24-hr-answer from support)
@@ -661,7 +648,6 @@ NOTE: services available depends on subscription
   * Microsoft Azure General Feedback
   * @AzureSupport
   * Knowledge Center (https://azure.microsoft.com/en-us/resources/knowledge-center/)
-  
   
 ### Azure Service Level Agreements
 * https://azure.microsoft.com/en-us/support/legal/sla/
@@ -679,7 +665,6 @@ Azure Updates on https://azure.microsoft.com/en-us/updates/.
 private preview: Azure feature available to certain Azure customers for evaluation purposes
 
 public preview: http://preview.portal.azure.com
-
 
 ## 5 Lessons learned and References from practice tests
 - PowerShell and Azure CLI support is not for Android OS

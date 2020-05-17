@@ -369,21 +369,16 @@ Cognitive Services:
   * pipelines, Git repositories, Kanban boards, extensive automated cloud-based load-testing
 * Azure DevTest Labs:
   * test environment => cost of an environment
-#### Azure App Service 
-* PaaS (create WebApp)
+#### Azure App Service (also called Azure WebApp)
+* PaaS for hosting web apps
 * multiple languages, frameworks
 * DevOps optimization
 * global scalability with high availability
 * security
 * VisualStudio Integration
-etc.
-  
-### Azure Web App
-- PaaS for hosting web apps using Azure App Service.
-- not responsible for machine setup, web server setup, security updates
-- underlying servers can be Windows or Linux.
-
-### Azure Functions
+* not responsible for machine setup, web server setup, security updates
+* underlying servers can be Windows or Linux.
+#### Azure Functions
 - serverless compute service
 - only pay what you use
 - use C#, F#, Node.js, Java or PHP
@@ -400,8 +395,7 @@ etc.
   - have instances allocated
   - have the function running longer time
   - more memory
-
-### Azure Logic Apps
+#### Azure Logic Apps
 * helps to automate and orchestrate tasks
 * helps to build workflows (with various templates) - do not need to worry about the infrastructure
 * fully managed and serverless service
@@ -410,8 +404,7 @@ etc.
 * workflows can be built via Visual Designer
 * Some connectors like Blob storage can trigger Azure Logic Apps.
 * Action: what to do when an event is triggered -> email to IT Administrator, Azure Function
-
-### Azure Management Tools
+#### Azure Management Tools
 * Azure Portal
 * PowerShell 
   * can run on Windows, Mac OS, Linux
